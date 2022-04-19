@@ -32,7 +32,7 @@ else
                 <div class="card">
                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/@(Pokemon.Id).png" class="card-img-top img-fluid" alt="@Pokemon.Name" />
                     <div class="card-body">
-                        <h3> class="card-title>@Pokemon.Name.ToUpper()</h3>
+                        <h3 class="card-title">@Pokemon.Name.ToUpper()</h3>
                         <h6>Height: @Pokemon.Height</h6>
                         <h6>Weight: @Pokemon.Weight</h6>
                         <h6>XP: @Pokemon.Experience</h6>
@@ -56,13 +56,13 @@ else
     protected async Task GetPokemonAsync()
     {
         IsLoading = true;
-        Pokemon = await GetPokemonAsync(searchText);
+        Pokemon = await GetPokemon(searchText);
         IsLoading = false;
     }
 
     protected async Task ChangePokemonAsync(int i)
     {
-        Pokemon = await GetPokemonAsync((Pokemon.Id += i).ToString());
+        Pokemon = await GetPokemon((Pokemon.Id += i).ToString());
     }
 
     public async Task<Pokemon> GetPokemon(string name)
